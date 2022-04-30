@@ -1,4 +1,3 @@
-import { Carousel } from 'bootstrap';
 import React, { useEffect, useState } from 'react';
 import "./Banner.css"
 
