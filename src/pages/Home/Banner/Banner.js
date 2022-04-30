@@ -8,7 +8,9 @@ const Banner = () => {
             fetch('https://still-depths-00724.herokuapp.com/cars')
                   .then(res => res.json())
                   .then(data => setImage(data))
-      }, [])
+      }, []);
+
+
       return (
             <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
                   <div className="carousel-inner">
@@ -20,7 +22,7 @@ const Banner = () => {
                         {
                               images.map(image =>
                                     <div className="carousel-item">
-                                          <img src={image.image} className="d-block w-100" alt="third slide" />
+                                          <img src={image.image} alt="third slide" />
                                     </div>
                               )
                         }
