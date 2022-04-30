@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Cards from './Cards';
 
 const Inventory = () => {
@@ -14,9 +15,11 @@ const Inventory = () => {
             <Container className='my-5'>
                   <h1>Our Items</h1>
 
-                  <div className="row">
+                  <div className="row my-5">
                         {data2.map(car => <Cards key={car._id} image={car.image} name={car.title} description={car.description} price={car.price} quantity={car.quantity} supplierName={car.supplierName}></Cards>)}
                   </div>
+
+                  <Link to="/manage-inventories" className='btn btn-info'>Manage Inventory</Link>
             </Container>
       );
 };
