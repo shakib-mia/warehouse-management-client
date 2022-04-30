@@ -41,5 +41,10 @@
 
 .carousel-item.active {
       color: white;
-      background: #000;
+      background: url("./images/img-group.jpg");
+}
+
+.carousel-item.active .h1 {
+      background: rgba(0, 0, 0, 50%);
+
 }

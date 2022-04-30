@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "./Banner.css"
+import "./Banner.css";
 
 const Banner = () => {
       const [images, setImage] = useState([]);
@@ -8,20 +8,18 @@ const Banner = () => {
             fetch('https://still-depths-00724.herokuapp.com/cars')
                   .then(res => res.json())
                   .then(data => {
-                        console.log(data[0].image)
                         setImage(data)
                   })
       }, [])
       return (
-
             <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
-                  <div class="carousel-inner">
-                        <div class="carousel-item active d-flex align-items-center justify-content-center">
-                              <h1 className=''>Welcome to Luxurious Car</h1>
+                  <div className="carousel-inner">
+                        <div className="carousel-item active">
+                              <div className='text-white d-flex align-items-center justify-content-center h-100 h1'>Welcome to Luxurious Car</div>
                         </div>
                         {
-                              images.map(image => <div class="carousel-item">
-                                    <img src={image.image} class="d-block w-100" alt={image.title} />
+                              images.map(image => <div className="carousel-item" key={image._id}>
+                                    <img src={image.image} className="d-block w-100" alt={image.title} />
                               </div>
                               )
                         }
