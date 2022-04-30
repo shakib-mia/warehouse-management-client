@@ -5,7 +5,7 @@ import "./header.css"
 
 const Header = () => {
       return (
-            <Navbar expand="md" fixed='top' className='navbar'>
+            <Navbar expand="md" fixed='top' className='navbar shadow'>
                   <Container>
                         <Nav.Link className='text-dark h3 text-decoration-none' to="/">Luxurious Car</Nav.Link>
 
