@@ -21,7 +21,7 @@ const Banner = () => {
                         </div>
                         {
                               images.map(image =>
-                                    <div className="carousel-item">
+                                    <div className="carousel-item" key={image._id}>
                                           <img src={image.image} alt="third slide" />
                                     </div>
                               )
