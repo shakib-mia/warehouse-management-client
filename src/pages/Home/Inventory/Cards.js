@@ -1,20 +1,25 @@
 import { Button } from 'bootstrap';
 import React from 'react';
 import { Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-const Cards = () => {
+const Cards = ({ name, image, description, price, quantity, supplierName }) => {
       return (
-            <Card className='col-4 mx-2'>
-                  <Card.Img variant="top" src="holder.js/100px180" />
-                  <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                              Some quick example text to build on the card title and make up the bulk of
-                              the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                  </Card.Body>
-            </Card>
+            <div className='col-12 col-md-6 col-lg-4 my-2'>
+                  <Card className='h-100 shadow'>
+                        <Card.Img variant="top" src={image} height="300px" />
+                        <Card.Body>
+                              <Card.Title>{name}</Card.Title>
+                              <Card.Text>
+                                    <p>{description}</p>
+                                    <p><b>Price: </b>${price}</p>
+                                    <p><b>Quantity: </b>{quantity}</p>
+                                    <p><b>Supplier:</b>{supplierName}</p>
+                              </Card.Text>
+                              <Link to="/" className='btn btn-primary'>Manage</Link>
+                        </Card.Body>
+                  </Card>
+            </div>
 
       );
 };
