@@ -33,8 +33,8 @@ const Register = () => {
                                     <label className="form-check-label" htmlFor="checkbox">I Agree with <Link to="/terms" className='text-decoration-none text-danger'>terms and conditions</Link></label>
                               </div>
 
-                              <button className='col-4 btn btn-success mx-auto'>Create Account</button>
                         </div>
+                        <button className='btn btn-success mx-auto'>Create Account</button>
                   </form>
             </Container>
       );
