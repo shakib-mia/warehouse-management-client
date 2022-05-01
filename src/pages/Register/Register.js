@@ -12,10 +12,10 @@ const Register = () => {
                   <form className='shadow p-4 col-7 mx-auto'>
                         <h1>Please Register</h1>
                         <div className="row">
-                              <div className="col-6 my-2">
+                              <div className="col-12 col-md-6 my-2">
                                     <input type="text" placeholder='First Name' className='form-control' id='firstName' />
                               </div>
-                              <div className="col-6 my-2">
+                              <div className="col-12 col-md-6 my-2">
                                     <input type="text" placeholder='Last Name' className='form-control' id='lastName' />
                               </div>
                               <div className="col-12 my-2">
