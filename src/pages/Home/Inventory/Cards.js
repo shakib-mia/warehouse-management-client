@@ -15,8 +15,10 @@ const Cards = ({ size, name, image, description, price, quantity, supplierName, 
                                     <p><b>Quantity: </b>{quantity}</p>
                                     <p><b>Supplier:</b>{supplierName}</p>
                               </Card.Text>
-                              <Link to={btnLink} className={`btn ${btnColor}`}>{buttonName}</Link >
                         </Card.Body>
+                        <Card.Footer className="bg-transparent border-0">
+                              <Link to={btnLink} className={`btn ${btnColor}`}>{buttonName}</Link>
+                        </Card.Footer>
                   </Card>
             </div>
 
