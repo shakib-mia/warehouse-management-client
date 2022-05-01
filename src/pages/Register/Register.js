@@ -9,7 +9,7 @@ const Register = () => {
 
       return (
             <Container className='mt-5 pt-5'>
-                  <form className='shadow p-4 col-7 mx-auto'>
+                  <form className='shadow p-4 col-12 col-md-10 col-lg-7 mx-auto'>
                         <h1>Please Register</h1>
                         <div className="row">
                               <div className="col-12 col-md-6 my-2">
