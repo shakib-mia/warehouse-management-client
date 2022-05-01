@@ -6,6 +6,7 @@ import Header from './Shared/Header/Header';
 import Footer from './Shared/Footer/Footer';
 import MyItems from './pages/MyItems/MyItems';
 import ManageInventories from './pages/ManaegInventories/ManageInventories';
+import Details from './pages/Details/Details';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/my-items' element={<MyItems></MyItems>}></Route>
         <Route path='/manage-inventories' element={<ManageInventories></ManageInventories>}></Route>
+        <Route path='/:_id' element={<Details></Details>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
