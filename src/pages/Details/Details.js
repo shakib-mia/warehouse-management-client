@@ -19,9 +19,9 @@ const Details = _id => {
                               quantity={selected.quantity}
                               supplierName={selected.supplierName}
                               btnLink="/"
-                              size="col-12 col-md-6 col-lg-4 mx-auto"
-                        ></Cards> : <div class="spinner-border text-center" role="status">
-                              <span class="visually-hidden">Loading...</span>
+                              size="col-12 col-md-8 col-lg-4 mx-auto"
+                        ></Cards> : <div className="spinner-border text-center text-primary" role="status">
+                              <span className="visually-hidden">Loading...</span>
                         </div>
                   }
             </Container>
