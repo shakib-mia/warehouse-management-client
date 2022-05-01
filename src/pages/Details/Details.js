@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import useInventories from '../../useInventories';
 import Cards from '../Home/Inventory/Cards';
 
