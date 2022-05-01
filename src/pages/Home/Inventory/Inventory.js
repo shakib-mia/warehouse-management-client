@@ -13,7 +13,7 @@ const Inventory = () => {
                   <h1>Our Items</h1>
                   <div className="row my-5">
                         {
-                              homeData ? homeData.map(car =>
+                              homeData.length > 0 ? homeData.map(car =>
                                     <Cards key={car._id}
                                           id={car._id}
                                           image={car.image}
@@ -27,8 +27,10 @@ const Inventory = () => {
                                           btnLink={`/${car._id}`}
                                           size='col-12 col-md-6 col-lg-4 my-2'
                                     ></Cards>
-                              ) : <div class="spinner-border text-center align-items-center" role="status">
-                                    <span class="visually-hidden">Loading...</span>
+                              ) : <div className="text-center">
+                                    <div className="spinner-border align-items-center">
+                                          <span className="visually-hidden">Loading...</span>
+                                    </div>
                               </div>
                         }
                   </div>

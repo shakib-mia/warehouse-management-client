@@ -4,11 +4,11 @@ import useInventories from '../../useInventories';
 import Cards from '../Home/Inventory/Cards';
 
 const ManageInventories = () => {
-      const [data] = useInventories()
+      const [data] = useInventories();
+      console.log(data)
       return (
-            <Container className='py-5 my-5'>
-                  this is manage inventories {data.length}
-                  <div className="row">
+            <Container className='mt-5 py-5'>
+                  {data.length > 0 ? <div className='row'>
                         {
                               data.map(car => <Cards key={car._id}
                                     id={car._id}
@@ -20,10 +20,16 @@ const ManageInventories = () => {
                                     supplierName={car.supplierName}
                                     buttonName="Delete"
                                     btnColor="btn-danger"
-                              >
-                              </Cards>)
+                                    btnLink={"/"}
+                                    size='col-12 col-md-6 col-lg-4 my-2'
+                              ></Cards>
+                              )
                         }
-                  </div>
+                  </div> : <div className="text-center">
+                        <div className="spinner-border align-items-center">
+                              <span className="visually-hidden">Loading...</span>
+                        </div>
+                  </div>}
             </Container>
       );
 };
