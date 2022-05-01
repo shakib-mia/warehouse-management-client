@@ -35,6 +35,17 @@ const Register = () => {
 
                         </div>
                         <button className='btn btn-success mx-auto'>Create Account</button>
+                        <div className='d-flex align-items-center my-3'>
+                              <div className='bg-secondary w-100' style={{ height: "1px" }}></div>
+                              <div className='px-3'>or</div>
+                              <div className='bg-secondary w-100' style={{ height: "1px" }}></div>
+                        </div>
+
+                        <div className="row">
+                              <button className='btn btn-outline-success my-2'>Continue with Google</button>
+                              <button className='btn btn-outline-dark my-2'>Continue with Github</button>
+                              <button className='btn btn-outline-info my-2'>Continue with Twitter</button>
+                        </div>
                   </form>
             </Container>
       );
