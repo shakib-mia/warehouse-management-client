@@ -7,6 +7,7 @@ import Footer from './Shared/Footer/Footer';
 import MyItems from './pages/MyItems/MyItems';
 import ManageInventories from './pages/ManaegInventories/ManageInventories';
 import Details from './pages/Details/Details';
+import Login from './pages/Login/Login';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/my-items' element={<MyItems></MyItems>}></Route>
         <Route path='/manage-inventories' element={<ManageInventories></ManageInventories>}></Route>
         <Route path='/:_id' element={<Details></Details>}></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
