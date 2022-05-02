@@ -2,11 +2,11 @@ import React from 'react';
 
 const Blogs = () => {
       return (
-            <div className="accordion mt-5 pt-5 col-12 col-md-10 col-lg-6 mx-auto text-start" id="accordionExample">
+            <div className="accordion mt-5 pt-5 col-11 col-md-10 col-lg-6 mx-auto text-start" id="accordionExample">
                   <div className="accordion-item">
                         <h2 className="accordion-header" id="headingOne">
                               <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    What are the differences between <code>&nbsp;Javascript&nbsp;</code> and <code>&nbsp;NodeJS</code>?
+                                    What are the differences between Javascript and NodeJS ?
                               </button>
                         </h2>
                         <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -37,7 +37,7 @@ const Blogs = () => {
                   <div className="accordion-item">
                         <h2 className="accordion-header" id="headingThree">
                               <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    What are the differences between <code>&nbsp;SQL&nbsp;</code>and <code>&nbsp;NoSQL&nbsp;</code>
+                                    What are the differences between SQL and NoSQL
                               </button>
                         </h2>
                         <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
@@ -59,7 +59,7 @@ const Blogs = () => {
                   <div className="accordion-item">
                         <h2 className="accordion-header" id="headingFour">
                               <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    What is the purpose of <code>&nbsp;JWT&nbsp;</code> and how does it work
+                                    What is the purpose of JWT and how does it work
                               </button>
                         </h2>
                         <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
