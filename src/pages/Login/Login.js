@@ -1,10 +1,11 @@
 import { getAuth } from 'firebase/auth';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link, useNavigate } from 'react-router-dom';
 import app from '../../firebase.init';
 import SocialRegister from './SocialRegister/SocialRegister';
+import "./Login.css"
 
 const auth = getAuth(app);
 
@@ -14,7 +15,13 @@ const Login = () => {
       const [email, setEmail] = useState([])
       const [password, setPassword] = useState([]);
       const [signInWithEmailAndPassword, user, error] = useSignInWithEmailAndPassword(auth);
+      const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+
       let message = document.getElementById("error");
+
+      const forgotPassword = () => {
+            sendPasswordResetEmail(email);
+      }
 
       const login = (event) => {
             event.preventDefault();
@@ -46,6 +53,7 @@ const Login = () => {
                               <label htmlFor="exampleInputPassword1">Password</label>
                               <input type="password" className="form-control" id="inputPassword" placeholder="Password" onBlur={e => setPassword(e.target.value)} required />
                         </div>
+                        <p className='text-primary text-decoration-underline forget-pass' onClick={forgotPassword}>Forgot Password?</p>
                         <p className="text-danger" id='error'></p>
                         <button type="submit" id='submit' className="btn btn-primary" onClick={login}>Login</button>
 
