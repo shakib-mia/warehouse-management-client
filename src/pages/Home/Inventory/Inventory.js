@@ -26,6 +26,7 @@ const Inventory = () => {
                                           btnColor="btn-primary"
                                           btnLink={`/${car._id}`}
                                           size='col-12 col-md-6 col-lg-4 my-2'
+                                          savePath={() => localStorage.setItem("id", car._id)}
                                     ></Cards>
                               ) : <div className="text-center">
                                     <div className="spinner-border align-items-center">

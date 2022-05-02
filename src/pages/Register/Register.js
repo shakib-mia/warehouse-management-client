@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import app from '../../firebase.init';
 import { getAuth } from "firebase/auth";
 import { Helmet } from 'react-helmet-async';
@@ -9,6 +9,7 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 const auth = getAuth(app)
 
 const Register = () => {
+      const navigate = useNavigate();
       const [email, setEmail] = useState('');
       const [password, setPassword] = useState('');
       const [firstName, setFirstName] = useState('');
@@ -22,13 +23,14 @@ const Register = () => {
                   .then(result => {
                         console.log(result)
                   })
-                  .catch(error => console.error(error))
+                  .catch(error => console.error(error));
       }
 
       if (user) {
             localStorage.setItem("email", user.user.email);
             localStorage.setItem("firstName", firstName);
             localStorage.setItem("lastName", lastName);
+            navigate("/")
       }
 
 

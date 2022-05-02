@@ -2,7 +2,7 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const Cards = ({ size, name, image, description, price, quantity, supplierName, buttonName, btnColor, btnLink }) => {
+const Cards = ({ size, name, image, description, price, quantity, supplierName, buttonName, btnColor, btnLink, savePath }) => {
       return (
             <div className={size}>
                   <Card className='h-100 shadow'>
@@ -17,7 +17,7 @@ const Cards = ({ size, name, image, description, price, quantity, supplierName, 
                               </Card.Text>
                         </Card.Body>
                         <Card.Footer className="bg-transparent border-0">
-                              <Link to={btnLink} className={`btn ${btnColor}`}>{buttonName}</Link>
+                              <Link to={btnLink} onClick={savePath} className={`btn ${btnColor}`}>{buttonName}</Link>
                         </Card.Footer>
                   </Card>
             </div>
