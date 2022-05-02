@@ -2,22 +2,35 @@ import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import app from '../../firebase.init';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 import { Helmet } from 'react-helmet-async';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
 const auth = getAuth(app)
 
 const Register = () => {
       const [email, setEmail] = useState('');
-      const [password, setPassword] = useState('')
+      const [password, setPassword] = useState('');
+      const [firstName, setFirstName] = useState('');
+      const [lastName, setLastName] = useState('')
+
+      const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth);
+
       const register = (event) => {
             event.preventDefault();
-            createUserWithEmailAndPassword(auth, email, password)
+            createUserWithEmailAndPassword(email, password, firstName, lastName)
                   .then(result => {
                         console.log(result)
                   })
-                  .catch(err => console.error(err))
+                  .catch(error => console.error(error))
       }
+
+      if (user) {
+            localStorage.setItem("email", user.user.email);
+            localStorage.setItem("firstName", firstName);
+            localStorage.setItem("lastName", lastName);
+      }
+
 
       return (
             <Container className='mt-5 pt-5'>
@@ -28,10 +41,10 @@ const Register = () => {
                         <h1>Please Register</h1>
                         <div className="row">
                               <div className="col-12 col-md-6 my-2">
-                                    <input type="text" placeholder='First Name' className='form-control' id='firstName' />
+                                    <input type="text" placeholder='First Name' className='form-control' id='firstName' onBlur={e => setFirstName(e.target.value)} />
                               </div>
                               <div className="col-12 col-md-6 my-2">
-                                    <input type="text" placeholder='Last Name' className='form-control' id='lastName' />
+                                    <input type="text" placeholder='Last Name' className='form-control' id='lastName' onBlur={e => setLastName(e.target.value)} />
                               </div>
                               <div className="col-12 my-2">
                                     <input type="email" placeholder='Enter Your Email Here' className='form-control' id="email" onChange={e => setEmail(e.target.value)} />
