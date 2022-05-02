@@ -20,14 +20,15 @@ const Login = () => {
             event.preventDefault();
             signInWithEmailAndPassword(email, password)
       }
-      if (error) {
-            message.innerText = "Email or Password Invalid"
-      }
-      else if (user) {
+      if (user) {
             message.innerText = ""
             localStorage.setItem("email", user?.user.email);
             console.log(user)
-            navigate('/')
+            navigate('/manage-inventories')
+      }
+
+      else if (error) {
+            message.innerText = "Email or Password Invalid"
       }
 
       return (
