@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import app from '../../firebase.init';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { Helmet } from 'react-helmet-async';
+import SocialRegister from './SocialRegister/SocialRegister';
 
 const auth = getAuth(app)
 
@@ -53,11 +54,7 @@ const Register = () => {
                               <div className='bg-secondary w-100' style={{ height: "1px" }}></div>
                         </div>
 
-                        <div className="row">
-                              <button className='btn btn-outline-success my-2'>Continue with Google</button>
-                              <button className='btn btn-outline-dark my-2'>Continue with Github</button>
-                              <button className='btn btn-outline-info my-2'>Continue with Twitter</button>
-                        </div>
+                        <SocialRegister></SocialRegister>
                   </form>
             </Container>
       );
