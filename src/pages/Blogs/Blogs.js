@@ -1,8 +1,12 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Blogs = () => {
       return (
             <div className="accordion mt-5 pt-5 col-11 col-md-10 col-lg-6 mx-auto text-start" id="accordionExample">
+                  <Helmet>
+                        <title>Blogs - Luxurious Car</title>
+                  </Helmet>
                   <div className="accordion-item">
                         <h2 className="accordion-header" id="headingOne">
                               <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">

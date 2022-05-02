@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import { Helmet } from 'react-helmet-async';
 import useInventories from '../../useInventories';
 import Cards from '../Home/Inventory/Cards';
 
@@ -8,6 +9,9 @@ const ManageInventories = () => {
       console.log(data)
       return (
             <Container className='mt-5 py-5'>
+                  <Helmet>
+                        <title>Inventories - Luxurious Car</title>
+                  </Helmet>
                   {data.length > 0 ? <div className='row'>
                         {
                               data.map(car => <Cards key={car._id}

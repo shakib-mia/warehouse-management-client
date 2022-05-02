@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import app from '../../firebase.init';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { Helmet } from 'react-helmet-async';
 
 const auth = getAuth(app)
 
@@ -20,6 +21,9 @@ const Register = () => {
 
       return (
             <Container className='mt-5 pt-5'>
+                  <Helmet>
+                        <title>Register - Luxurious Car</title>
+                  </Helmet>
                   <form className='shadow p-4 col-12 col-md-10 col-lg-7 mx-auto'>
                         <h1>Please Register</h1>
                         <div className="row">

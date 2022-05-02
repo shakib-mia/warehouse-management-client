@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
@@ -8,6 +9,9 @@ const Login = () => {
 
       return (
             <div className='mt-5 pt-4 d-flex align-items-center'>
+                  <Helmet>
+                        <title>Login - Luxurious Car</title>
+                  </Helmet>
                   <form className='col-10 col-md-6 p-3 shadow mt-5 mx-auto text-start rounded'>
                         <h2 className='text-center'>Login</h2>
                         <div className="form-group my-3">
