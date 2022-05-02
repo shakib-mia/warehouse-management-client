@@ -10,6 +10,7 @@ import Details from './pages/Details/Details';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import Terms from './pages/Terms/Terms';
+import Blogs from './pages/Blogs/Blogs';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/terms' element={<Terms></Terms>}></Route>
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
