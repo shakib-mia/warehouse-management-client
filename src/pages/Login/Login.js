@@ -23,7 +23,7 @@ const Login = () => {
       if (user) {
             message.innerText = ""
             localStorage.setItem("email", user.user.email);
-            console.log(user)
+            window.location.reload();
             navigate(`/${localStorage.getItem("id") ? localStorage.getItem('id') : ""}`)
       }
 

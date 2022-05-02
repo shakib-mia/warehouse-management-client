@@ -9,12 +9,12 @@ const Cards = ({ size, name, image, description, price, quantity, supplierName, 
                         <Card.Img variant="top" src={image} height="300px" />
                         <Card.Body>
                               <Card.Title>{name}</Card.Title>
-                              <Card.Text>
+                              <div className='card-text'>
                                     <p>{description}</p>
                                     <p><b>Price: </b>${price}</p>
                                     <p><b>Quantity: </b>{quantity}</p>
                                     <p><b>Supplier:</b>{supplierName}</p>
-                              </Card.Text>
+                              </div>
                         </Card.Body>
                         <Card.Footer className="bg-transparent border-0">
                               <Link to={btnLink} onClick={savePath} className={`btn ${btnColor}`}>{buttonName}</Link>
