@@ -22,12 +22,12 @@ const Login = () => {
       }
       if (user) {
             message.innerText = ""
-            localStorage.setItem("email", user?.user.email);
+            localStorage.setItem("email", user.user.email);
             console.log(user)
-            navigate(`/${localStorage.getItem('id')}`)
+            navigate(`/${localStorage.getItem("id") ? localStorage.getItem('id') : ""}`)
       }
 
-      else if (error) {
+      else if (error && !user) {
             message.innerText = "Email or Password Invalid"
       }
 

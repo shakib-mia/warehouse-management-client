@@ -12,6 +12,7 @@ const SocialRegister = () => {
             signInWithPopup(auth, provider)
                   .then(result => {
                         console.log(result.user)
+                        localStorage.setItem("name", result.user.displayName)
                   })
       }
 
