@@ -20,7 +20,8 @@ const Login = () => {
       let message = document.getElementById("error");
 
       const forgotPassword = () => {
-            sendPasswordResetEmail(email);
+            message.innerText = "Password Reset Link Sent";
+            sendPasswordResetEmail();
       }
 
       const login = (event) => {
