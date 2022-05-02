@@ -24,7 +24,7 @@ const Login = () => {
             message.innerText = ""
             localStorage.setItem("email", user?.user.email);
             console.log(user)
-            navigate('/manage-inventories')
+            navigate('/:_id')
       }
 
       else if (error) {
