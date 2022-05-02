@@ -27,9 +27,9 @@ const SocialRegister = () => {
       }
 
       return (
-            <div className="d-flex justify-content-around">
-                  <button className='btn btn-outline-success my-2' onClick={HandleGoogleSignIn}>Continue with Google</button>
-                  <button className='btn btn-outline-dark my-2' onClick={handleGithubSignIn}>Continue with Github</button>
+            <div>
+                  <button className='col-12 col-md-5 btn btn-outline-success mx-2 my-2' onClick={HandleGoogleSignIn}>Continue with Google</button>
+                  <button className='col-12 col-md-5 btn btn-outline-dark mx-2 my-2' onClick={handleGithubSignIn}>Continue with Github</button>
             </div>
       );
 };

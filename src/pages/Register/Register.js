@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import app from '../../firebase.init';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { Helmet } from 'react-helmet-async';
-import SocialRegister from './SocialRegister/SocialRegister';
 
 const auth = getAuth(app)
 
@@ -48,13 +47,6 @@ const Register = () => {
                         </div>
                         <button className='btn btn-success mx-auto' onClick={register}>Create Account</button>
                         <p className='pt-3'>Already a Member? <Link to="/login">Login</Link></p>
-                        <div className='d-flex align-items-center my-3'>
-                              <div className='bg-secondary w-100' style={{ height: "1px" }}></div>
-                              <div className='px-3'>or</div>
-                              <div className='bg-secondary w-100' style={{ height: "1px" }}></div>
-                        </div>
-
-                        <SocialRegister></SocialRegister>
                   </form>
             </Container>
       );
