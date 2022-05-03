@@ -8,8 +8,9 @@ const Details = _id => {
       const selected = data.find(car => car._id === window.location.href.substring(22));
 
       return (
-            <div>
-                  <Container className='mt-5 pt-5'>
+
+            <Container className='mt-5 pt-5 row mx-auto'>
+                  <div className='col-6'>
                         {
                               selected ? <Cards
                                     key={selected._id}
@@ -20,13 +21,22 @@ const Details = _id => {
                                     quantity={selected.quantity}
                                     supplierName={selected.supplierName}
                                     btnLink="/"
-                                    size="col-12 col-md-8 col-lg-4 mx-auto"
+                                    size="col-10 mx-auto"
                               ></Cards> : <div className="spinner-border text-center text-primary" role="status">
                                     <span className="visually-hidden">Loading...</span>
                               </div>
                         }
-                  </Container>
-            </div>
+                  </div>
+
+                  <div className="col-6 my-auto">
+                        <h2 className='text-center'>Restock</h2>
+                        <div className="input-group mb-3">
+                              <input type="number" className="form-control" placeholder="Input Quantity" aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                              <input type="button" value="Restock" className="btn btn-success" id="basic-addon2" />
+                        </div>
+                  </div>
+            </Container>
+
       );
 };
 
