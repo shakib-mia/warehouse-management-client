@@ -12,12 +12,14 @@ import Register from './pages/Register/Register';
 import Terms from './pages/Terms/Terms';
 import Blogs from './pages/Blogs/Blogs';
 import RequireAuth from './RequireAuth';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
 
 function App() {
   return (
     <div className="App">
       <Header></Header>
       <Routes>
+        <Route path='*' element={<ErrorPage></ErrorPage>}></Route>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/my-items' element={<MyItems></MyItems>}></Route>
         <Route path='/manage-inventories' element={<ManageInventories></ManageInventories>}></Route>

@@ -1,4 +1,4 @@
-.carousel-item img {
+.carousel-banner img {
       width: 100vw;
       height: 50vh;
 }
@@ -6,17 +6,17 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-      .carousel-item {
+      .carousel-banner {
             width: 100%;
             height: auto;
       }
 
-      .carousel-item img {
+      .carousel-banner img {
             width: 100%;
             height: 50vh;
       }
 
-      .carousel-item>.intro {
+      .carousel-banner>.intro {
             height: 50vh;
             width: 100vw;
             display: flex;
@@ -29,17 +29,17 @@
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-      .carousel-item {
+      .carousel-banner {
             width: 100%;
             height: auto;
       }
 
-      .carousel-item img {
+      .carousel-banner img {
             width: 100%;
             height: 50vh;
       }
 
-      .carousel-item>.intro {
+      .carousel-banner>.intro {
             height: 50vh;
             width: 100vw;
             display: flex;
@@ -52,17 +52,17 @@
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-      .carousel-item {
+      .carousel-banner {
             width: 100%;
             height: auto;
       }
 
-      .carousel-item img {
+      .carousel-banner img {
             width: 100%;
             height: 100vh;
       }
 
-      .carousel-item>.intro {
+      .carousel-banner>.intro {
             height: 100vh;
             width: 100vw;
             display: flex;
@@ -75,17 +75,17 @@
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-      .carousel-item {
+      .carousel-banner {
             width: 100%;
             height: auto;
       }
 
-      .carousel-item img {
+      .carousel-banner img {
             width: 100%;
             height: 100vh;
       }
 
-      .carousel-item>.intro {
+      .carousel-banner>.intro {
             height: 100vh;
             width: 100vw;
             display: flex;
@@ -98,17 +98,17 @@
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-      .carousel-item {
+      .carousel-banner {
             width: 100%;
             height: 100vh;
       }
 
-      .carousel-item img {
+      .carousel-banner img {
             width: 100%;
             height: 100vh;
       }
 
-      .carousel-item>.intro {
+      .carousel-banner>.intro {
             height: 100vh;
             width: 100vw;
             display: flex;
@@ -119,7 +119,7 @@
       }
 }
 
-.carousel-item.active {
+.carousel-banner.active {
       color: white;
       background: url("./images/img-group.jpg");
       background-position-y: -100;

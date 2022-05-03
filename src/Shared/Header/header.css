@@ -2,7 +2,7 @@
       background: rgba(255, 255, 255, 80%);
 }
 
-.active {
+.text-decoration-none.active {
       background-color: rgb(233, 171, 171);
       border-radius: 7px;
 }

@@ -12,7 +12,7 @@ const Details = _id => {
             <Container className='mt-5 pt-5'>
                   <Helmet>
                         <title>
-                              {selected?.title}
+                              {selected?.title} Details
                         </title>
                   </Helmet>
                   {

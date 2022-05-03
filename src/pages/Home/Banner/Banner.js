@@ -14,14 +14,14 @@ const Banner = () => {
       return (
             <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
                   <div className="carousel-inner">
-                        <div className="carousel-item active">
+                        <div className="carousel-item carousel-banner active">
                               <div className='intro'>
                                     <h1 className='display-2'>Welcome to Luxurious Car</h1>
                               </div>
                         </div>
                         {
                               images.map(image =>
-                                    <div className="carousel-item" key={image._id}>
+                                    <div className="carousel-item carousel-banner" key={image._id}>
                                           <img src={image.image} alt="third slide" />
                                     </div>
                               )
