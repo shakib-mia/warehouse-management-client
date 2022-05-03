@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import { Helmet } from 'react-helmet-async';
 import useInventories from '../../useInventories';
 import Cards from '../Home/Inventory/Cards';
 
@@ -10,9 +9,6 @@ const Details = _id => {
 
       return (
             <div>
-                  <Helmet>
-                        <title>{selected?.title} - Luxurious Car</title>
-                  </Helmet>
                   <Container className='mt-5 pt-5'>
                         {
                               selected ? <Cards
