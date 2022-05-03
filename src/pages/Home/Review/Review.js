@@ -17,18 +17,22 @@ const Review = () => {
                   <div id="carouselExampleControl" className="carousel col-6 mx-auto slide" data-bs-ride="carousel">
 
                         <div className="carousel-inner py-5">
-                              <div className="carousel-item active">
-                                    {comments ?
-                                          <div>
-                                                <h1>{comments[0]?.name}</h1>
-                                                <p>{comments[0]?.comment}</p>
-                                          </div>
-                                          : "Loading"}
-                              </div>
+                              {comments ?
+                                    <div className="carousel-item active">
+                                          <img src={comments[0]?.image} alt={comments[0]?.name} className="rounded-circle" width="250px" />
+                                          <br />
+                                          <img src={comments[0]?.review} alt="" width="100px" className='mt-4' />
+                                          <h1>{comments[0]?.name}</h1>
+                                          <p>{comments[0]?.comment}</p>
+                                    </div>
+                                    : "Loading"}
                               {
                                     nextComments?.map(comment => <div className="carousel-item" key={comment._id}>
+                                          <img src={comment.image} alt={comment.name} className="rounded-circle" style={{ "width": "250px" }} />
+                                          <br />
+                                          <img src={comment.review} alt="" width="100px" className='mt-4' />
                                           <h1>{comment.name}</h1>
-                                          {comment.comment}
+                                          <p>{comment.comment}</p>
                                     </div>
                                     )
                               }

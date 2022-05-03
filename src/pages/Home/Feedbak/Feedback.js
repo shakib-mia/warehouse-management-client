@@ -5,16 +5,17 @@ const Feedback = () => {
       const [name, setName] = useState('');
       const [comment, setComment] = useState('');
       const [image, setImage] = useState('');
-      const [rating, setRating] = useState('');
+      const [review, setReview] = useState('');
 
-      const comments = { name, comment, image, rating }
+      const comments = { name, comment, image, review }
 
       const formSubmit = event => {
             event.preventDefault();
             comments.name = name;
-            comments.comment = comment;
+            comments.comments = comment;
             comments.image = image;
-            comments.rating = rating;
+            comments.review = review;
+
             fetch(`https://still-depths-00724.herokuapp.com/comments`, {
                   method: "POST",
                   headers: {
@@ -24,7 +25,8 @@ const Feedback = () => {
             })
                   .then(res => res.json())
                   .then(result => console.log(result))
-            alert("Your feedback has been added")
+            window.location.reload();
+            alert("Thanks For Your Feedback")
       }
 
       return (
@@ -37,14 +39,14 @@ const Feedback = () => {
                               <input required type="text" placeholder='Enter Your Image URL' className="form-control my-2" onBlur={e => setImage(e.target.value)} />
                               <textarea required id="" cols="30" rows="5" className='form-control' placeholder='Give Your Feedback Here' onBlur={e => setComment(e.target.value)}></textarea>
                               <label className='mt-4' htmlFor="rating">Give A Rating Here</label>
-                              <select id='rating' className="form-select" required onChange={e => setRating(e.target.value)}>
+                              <select id='rating' className="form-select" required onChange={e => setReview(e.target.value)}>
                                     <option value="https://i.ibb.co/PmfvwFd/five-star.png">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
                                     <option value="https://i.ibb.co/zZxmyhs/four-star.png">&#9733;&#9733;&#9733;&#9733;</option>
                                     <option value="https://i.ibb.co/yXcWxCL/three-star.png">&#9733;&#9733;&#9733;</option>
                                     <option value="https://i.ibb.co/vYQvFD6/two-star.png">&#9733;&#9733;</option>
                                     <option value="https://i.ibb.co/2PTFTR9/one-star.png">&#9733;</option>
                               </select>
-                              <input required type="submit" value="Submit" className='btn btn-success' />
+                              <input required type="submit" value="Submit" className='btn btn-success my-3' />
                         </form>
                   </div>
             </Container>
