@@ -10,7 +10,7 @@ const Details = _id => {
       return (
 
             <Container className='mt-5 pt-5 row mx-auto'>
-                  <div className='col-6'>
+                  <div className='col-10 col-lg-6 mx-auto'>
                         {
                               selected ? <Cards
                                     key={selected._id}
@@ -28,7 +28,7 @@ const Details = _id => {
                         }
                   </div>
 
-                  <div className="col-6 my-auto">
+                  <div className="col-10 col-lg-6 mx-auto my-auto">
                         <h2 className='text-center'>Restock</h2>
                         <div className="input-group mb-3">
                               <input type="number" className="form-control" placeholder="Input Quantity" aria-label="Recipient's username" aria-describedby="basic-addon2" />
