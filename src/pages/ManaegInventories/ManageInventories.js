@@ -13,34 +13,32 @@ const ManageInventories = () => {
                   <Helmet>
                         <title>Inventories - Luxurious Car</title>
                   </Helmet>
+
+                  <Link to="/add-new-item" className='btn btn-success'>Add New Item</Link>
+
                   <div className="row">
-                        <div className="col-12 col-lg-6">
-                              {data.length > 0 ? <div className='row'>
-                                    {
-                                          data.map(car => <Cards key={car._id}
-                                                id={car._id}
-                                                image={car.image}
-                                                name={car.title}
-                                                description={car.description}
-                                                price={car.price}
-                                                quantity={car.quantity}
-                                                supplierName={car.supplierName}
-                                                buttonName="Delete"
-                                                btnColor="btn-danger"
-                                                btnLink={"/"}
-                                                size='col-12 col-md-10 my-2 mx-auto'
-                                          ></Cards>
-                                          )
-                                    }
-                              </div> : <div className="text-center">
+                        {data.length > 0 ?
+
+                              data.map(car => <Cards key={car._id}
+                                    id={car._id}
+                                    image={car.image}
+                                    name={car.title}
+                                    description={car.description}
+                                    price={car.price}
+                                    quantity={car.quantity}
+                                    supplierName={car.supplierName}
+                                    buttonName="Delete"
+                                    btnColor="btn-danger"
+                                    btnLink={"/"}
+                                    size='col-12 col-md-6 col-lg-4 my-2'
+                              ></Cards>
+                              )
+
+                              : <div className="text-center">
                                     <div className="spinner-border align-items-center">
                                           <span className="visually-hidden">Loading...</span>
                                     </div>
                               </div>}
-                        </div>
-                        <div className="col-12 col-lg-6 my-4">
-                              <Link to="/add-new-item" className='btn btn-success'>Add New Item</Link>
-                        </div>
                   </div>
             </Container>
       );
