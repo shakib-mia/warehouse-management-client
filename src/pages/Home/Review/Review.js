@@ -19,7 +19,7 @@ const Review = () => {
                         <div className="carousel-inner py-5">
                               {comments ?
                                     <div className="carousel-item active">
-                                          <img src={comments[0]?.image} alt={comments[0]?.name} className="rounded-circle" width="250px" />
+                                          <img src={comments[0]?.image} alt={comments[0]?.name} className="rounded-circle w-25" />
                                           <br />
                                           <img src={comments[0]?.review} alt="" width="100px" className='mt-4' />
                                           <h1>{comments[0]?.name}</h1>
@@ -28,7 +28,7 @@ const Review = () => {
                                     : "Loading"}
                               {
                                     nextComments?.map(comment => <div className="carousel-item" key={comment._id}>
-                                          <img src={comment.image} alt={comment.name} className="rounded-circle" style={{ "width": "250px" }} />
+                                          <img src={comment.image} alt={comment.name} className="rounded-circle w-25" />
                                           <br />
                                           <img src={comment.review} alt="" width="100px" className='mt-4' />
                                           <h1>{comment.name}</h1>
