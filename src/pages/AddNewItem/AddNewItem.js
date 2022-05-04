@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const AddNewItem = () => {
       const [title, setTitle] = useState('');
@@ -37,6 +38,9 @@ const AddNewItem = () => {
 
       return (
             <div className='mt-5 pt-5'>
+                  <Helmet>
+                        <title>Add New Items - Luxurious Car</title>
+                  </Helmet>
                   <h1>Add A New Item</h1>
                   <form onSubmit={submitItem} className="col-8 mx-auto p-4 shadow rounded-4">
                         <input type="text" placeholder='Enter Item Title' className='my-3 form-control' onBlur={e => setTitle(e.target.value)} />

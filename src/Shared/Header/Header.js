@@ -6,10 +6,12 @@ import "./header.css"
 
 const Header = () => {
       const logout = () => {
+            window.location.reload()
             localStorage.removeItem('name')
             localStorage.removeItem('email')
             signOut();
       }
+
       return (
             <Navbar expand="lg" fixed='top' className='navbar shadow'>
                   <Container>

@@ -9,12 +9,12 @@ const ManageInventories = () => {
       const [data] = useInventories();
 
       return (
-            <Container className='mt-5 py-5'>
+            <Container className='py-5'>
                   <Helmet>
                         <title>Inventories - Luxurious Car</title>
                   </Helmet>
 
-                  <Link to="/add-new-item" className='btn btn-success'>Add New Item</Link>
+                  <Link to="/add-new-item" className='btn btn-success my-5'>Add New Item</Link>
 
                   <div className="row">
                         {data.length > 0 ?
