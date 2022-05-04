@@ -4,7 +4,7 @@ const useInventories = () => {
       const [data, setData] = useState([]);
 
       useEffect(() => {
-            fetch("https://still-depths-00724.herokuapp.com/cars")
+            fetch("https://still-depths-00724.herokuapp.com/allCars")
                   .then(res => res.json())
                   .then(data => setData(data))
       }, [])
