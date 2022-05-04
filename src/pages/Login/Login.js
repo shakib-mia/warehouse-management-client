@@ -32,7 +32,7 @@ const Login = () => {
             message.innerText = ""
             localStorage.setItem("email", user.user.email);
             window.location.reload();
-            navigate(`/${localStorage.getItem("id") ? localStorage.getItem('id') : ""}`)
+            navigate(`/car/${localStorage.getItem("id") ? localStorage.getItem('id') : ""}`)
       }
 
       else if (error && !user) {

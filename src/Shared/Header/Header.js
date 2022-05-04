@@ -28,8 +28,8 @@ const Header = () => {
                                                 localStorage.getItem("email")
                                                       ?
                                                       <span className='pt-2 pt-md-0'>
-                                                            <NavLink to="/add-items" className='text-decoration-none text-dark px-3 py-2 ms-2 d-block d-lg-inline-block'>Manage Items</NavLink>
-                                                            <NavLink to="/manage-items" className='text-decoration-none text-dark px-3 py-2 ms-2 d-block d-lg-inline-block'>Add Items</NavLink>
+                                                            <NavLink to="/add-items" className='text-decoration-none text-dark px-3 py-2 ms-2 d-block d-lg-inline-block'>Add Items</NavLink>
+                                                            <NavLink to="/manage-items" className='text-decoration-none text-dark px-3 py-2 ms-2 d-block d-lg-inline-block'>Manage Items</NavLink>
                                                             <NavLink to="/my-items" className='text-decoration-none text-dark px-3 py-2 ms-2 d-block d-lg-inline-block'>My Items</NavLink>
                                                             <NavLink to="/" onClick={logout} className='text-decoration-none text-dark px-3 py-2 ms-2 d-block d-lg-inline-block'>{localStorage.email} <button>Logout</button></NavLink>
                                                       </span>
