@@ -5,10 +5,9 @@ import Cards from '../Home/Inventory/Cards';
 
 const Details = _id => {
       const [data] = useInventories();
-      const selected = data.find(car => car._id === window.location.href.substring(22));
+      const selected = data.find(car => car._id === window.location.href.substring(26));
 
       return (
-
             <Container className='mt-5 pt-5 row mx-auto'>
                   <div className='col-10 col-lg-6 mx-auto'>
                         {

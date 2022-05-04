@@ -24,7 +24,7 @@ const Inventory = () => {
                                           supplierName={car.supplierName}
                                           buttonName="Manage"
                                           btnColor="btn-primary"
-                                          btnLink={`/${car._id}`}
+                                          btnLink={`${car._id}`}
                                           size='col-12 col-md-6 col-lg-4 my-2'
                                           savePath={() => localStorage.setItem("id", car._id)}
                                     ></Cards>
