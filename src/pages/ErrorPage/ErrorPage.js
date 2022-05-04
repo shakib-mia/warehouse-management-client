@@ -7,7 +7,7 @@ const ErrorPage = () => {
                   <Helmet>
                         <title>Page Not Found - Luxurious Car</title>
                   </Helmet>
-                  oops
+                  <img src="error.png" width={"100%"} height="auto" alt="" />
             </div>
       );
 };
