@@ -13,6 +13,7 @@ import Terms from './pages/Terms/Terms';
 import Blogs from './pages/Blogs/Blogs';
 import RequireAuth from './RequireAuth';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
+import AddNewItem from './pages/AddNewItem/AddNewItem';
 
 function App() {
   return (
@@ -32,6 +33,11 @@ function App() {
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/terms' element={<Terms></Terms>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+        <Route path='/add-new-item' element={
+          <RequireAuth>
+            <AddNewItem></AddNewItem>
+          </RequireAuth>
+        }></Route>
       </Routes>
       <Footer></Footer>
     </div>
