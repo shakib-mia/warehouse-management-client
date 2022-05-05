@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useInventories from '../../useInventories';
@@ -8,8 +8,42 @@ const Details = _id => {
       const [data] = useInventories();
       const selected = data.find(car => car._id === window.location.href.substring(26));
 
-      const updateCount = () => {
-            alert("Hi")
+      const [newCount, setNewCount] = useState(0);
+
+      // const car = { quantity }
+      // car.quantity = newCount;
+
+      const updateCount = id => {
+            const updatedCount = selected.quantity + parseInt(newCount);
+
+            fetch(`https://still-depths-00724.herokuapp.com/allCars/${selected._id}`, {
+                  method: "POST",
+                  mode: "no-cors",
+                  headers: {
+                        'content-type': "application/json"
+                  },
+                  body: JSON.stringify(selected)
+            })
+                  .then(res => res.json())
+                  .then(result => console.log(result))
+      }
+
+      const delivered = () => {
+            const updatedCount = selected.quantity - 1;
+
+            selected.quantity = updatedCount;
+
+            console.log(selected.quantity)
+
+            fetch(`https://localhost:7000/allCars/${selected._id}`, {
+                  method: "PUT",
+                  headers: {
+                        'content-type': "application/json"
+                  },
+                  body: JSON.stringify(selected)
+            })
+                  .then(res => res.json())
+                  .then(result => console.log(result))
       }
 
       return (
@@ -25,7 +59,8 @@ const Details = _id => {
                                     quantity={selected.quantity}
                                     supplierName={selected.supplierName}
                                     buttonName="Delivered"
-                                    savePath={updateCount}
+                                    btnLink={`${selected?._id}`}
+                                    savePath={() => delivered(selected._id)}
                                     btnColor="btn-success"
                                     size="col-10 mx-auto"
                               ></Cards> : <div className="spinner-border text-center text-primary" role="status">
@@ -37,8 +72,8 @@ const Details = _id => {
                   <div className="col-10 col-lg-6 mx-auto my-auto">
                         <h2 className='text-center'>Restock</h2>
                         <div className="input-group mb-3">
-                              <input type="number" className="form-control" placeholder="Input Quantity" aria-label="Recipient's username" aria-describedby="basic-addon2" />
-                              <input type="button" value="Restock" className="btn btn-success" id="basic-addon2" />
+                              <input type="number" className="form-control" placeholder="Input Quantity" aria-label="Recipient's username" aria-describedby="basic-addon2" onBlur={e => setNewCount(e.target.value)} />
+                              <input type="button" value="Restock" className="btn btn-success" id="basic-addon2" onClick={() => updateCount(selected._id)} />
                         </div>
                   </div>
 
