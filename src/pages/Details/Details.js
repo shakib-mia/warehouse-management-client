@@ -16,13 +16,14 @@ const Details = _id => {
       const updateCount = id => {
             const updatedCount = selected.quantity + parseInt(newCount);
 
-            fetch(`https://still-depths-00724.herokuapp.com/allCars/${selected._id}`, {
-                  method: "POST",
-                  mode: "no-cors",
+            selected.quantity = updatedCount;
+
+            fetch('https://still-depths-00724.herokuapp.com/allCars/:_id', {
+                  method: "PUT",
                   headers: {
                         'content-type': "application/json"
                   },
-                  body: JSON.stringify(selected)
+                  body: JSON.stringify(selected),
             })
                   .then(res => res.json())
                   .then(result => console.log(result))

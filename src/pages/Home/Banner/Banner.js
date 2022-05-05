@@ -5,7 +5,7 @@ const Banner = () => {
       const [images, setImage] = useState([]);
 
       useEffect(() => {
-            fetch('https://still-depths-00724.herokuapp.com/cars')
+            fetch('https://still-depths-00724.herokuapp.com/allCars')
                   .then(res => res.json())
                   .then(data => setImage(data))
       }, []);
@@ -20,7 +20,7 @@ const Banner = () => {
                               </div>
                         </div>
                         {
-                              images.map(image =>
+                              images.slice(1, images.length - 1).map(image =>
                                     <div className="carousel-item carousel-banner" key={image._id}>
                                           <img src={image.image} alt="third slide" />
                                     </div>
