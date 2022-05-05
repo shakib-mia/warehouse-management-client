@@ -8,22 +8,20 @@ const Details = _id => {
       const [data] = useInventories();
       const selected = data.find(car => car._id === window.location.href.substring(26));
 
-      const [newCount, setNewCount] = useState(0);
+      const [quantity, setNewCount] = useState(0);
+      const car = { quantity };
 
-      // const car = { quantity }
-      // car.quantity = newCount;
+      const updateCount = () => {
+            const updatedCount = selected.quantity + parseInt(quantity);
+            // selected.quantity = updatedCount;
+            car.quantity = updatedCount;
 
-      const updateCount = id => {
-            const updatedCount = selected.quantity + parseInt(newCount);
-
-            selected.quantity = updatedCount;
-
-            fetch('https://still-depths-00724.herokuapp.com/allCars/:_id', {
+            fetch('http://localhost:7000/allCars', {
                   method: "PUT",
                   headers: {
-                        'content-type': "application/json"
+                        "content-type": "application/json"
                   },
-                  body: JSON.stringify(selected),
+                  body: JSON.stringify(selected)
             })
                   .then(res => res.json())
                   .then(result => console.log(result))
@@ -33,18 +31,6 @@ const Details = _id => {
             const updatedCount = selected.quantity - 1;
 
             selected.quantity = updatedCount;
-
-            console.log(selected.quantity)
-
-            fetch(`https://localhost:7000/allCars/${selected._id}`, {
-                  method: "PUT",
-                  headers: {
-                        'content-type': "application/json"
-                  },
-                  body: JSON.stringify(selected)
-            })
-                  .then(res => res.json())
-                  .then(result => console.log(result))
       }
 
       return (
@@ -74,7 +60,7 @@ const Details = _id => {
                         <h2 className='text-center'>Restock</h2>
                         <div className="input-group mb-3">
                               <input type="number" className="form-control" placeholder="Input Quantity" aria-label="Recipient's username" aria-describedby="basic-addon2" onBlur={e => setNewCount(e.target.value)} />
-                              <input type="button" value="Restock" className="btn btn-success" id="basic-addon2" onClick={() => updateCount(selected._id)} />
+                              <input type="button" value="Restock" className="btn btn-success" id="basic-addon2" onClick={updateCount} />
                         </div>
                   </div>
 
