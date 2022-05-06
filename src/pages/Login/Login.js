@@ -20,8 +20,15 @@ const Login = () => {
       let message = document.getElementById("error");
 
       const forgotPassword = () => {
-            message.innerText = "Password Reset Link Sent";
-            sendPasswordResetEmail(email);
+            if (email.length > 10) {
+                  message.classList.add("text-success")
+                  message.innerText = "Password Reset Link Sent";
+                  sendPasswordResetEmail(email);
+            } else {
+                  message.classList.add("text-danger")
+                  message.innerText = ""
+                  message.innerText = "Please Enter an Email Address"
+            }
       }
 
       const login = (event) => {
@@ -55,7 +62,7 @@ const Login = () => {
                               <input type="password" className="form-control" id="inputPassword" placeholder="Password" onBlur={e => setPassword(e.target.value)} required />
                         </div>
                         <p className='text-primary text-decoration-underline forget-pass' onClick={forgotPassword}>Forgot Password?</p>
-                        <p className="text-danger" id='error'></p>
+                        <p id='error'></p>
                         <button type="submit" id='submit' className="btn btn-primary" onClick={login}>Login</button>
 
                         <p>New to Luxurious Car? <Link to="/register">Please Register</Link></p>
