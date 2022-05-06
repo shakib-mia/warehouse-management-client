@@ -28,7 +28,7 @@ const Login = () => {
             event.preventDefault();
             signInWithEmailAndPassword(email, password)
       }
-      if (user) {
+      if (user && !error) {
             message.innerText = ""
             localStorage.setItem("email", user.user.email);
             window.location.reload();

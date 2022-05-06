@@ -7,7 +7,7 @@ const Feedback = () => {
       const [image, setImage] = useState('');
       const [review, setReview] = useState('');
 
-      const comments = { name, comment, image, review }
+      const comments = { name, comment, image, review };
 
       const formSubmit = event => {
             event.preventDefault();
@@ -39,7 +39,7 @@ const Feedback = () => {
                               <input required type="text" placeholder='Enter Your Image URL' className="form-control my-2" onBlur={e => setImage(e.target.value)} />
                               <textarea required id="" cols="30" rows="5" className='form-control' placeholder='Give Your Feedback Here' onBlur={e => setComment(e.target.value)}></textarea>
                               <label className='mt-4' htmlFor="rating">Give A Rating Here</label>
-                              <select id='rating' className="form-select" required onChange={e => setReview(e.target.value)}>
+                              <select id='rating' className="form-select" required onClick={e => setReview(e.target.value)}>
                                     <option value="https://i.ibb.co/PmfvwFd/five-star.png">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
                                     <option value="https://i.ibb.co/zZxmyhs/four-star.png">&#9733;&#9733;&#9733;&#9733;</option>
                                     <option value="https://i.ibb.co/yXcWxCL/three-star.png">&#9733;&#9733;&#9733;</option>
