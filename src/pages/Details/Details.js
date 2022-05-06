@@ -4,24 +4,38 @@ import { Link } from 'react-router-dom';
 import useInventories from '../../useInventories';
 import Cards from '../Home/Inventory/Cards';
 
-const Details = _id => {
+const Details = () => {
       const [data] = useInventories();
       const selected = data.find(car => car._id === window.location.href.substring(26));
 
       const [quantity, setNewCount] = useState(0);
-      const car = { quantity };
+
+      const _id = selected?._id;
+      const title = selected?.title;
+      const description = selected?.description;
+      const image = selected?.image;
+      const price = selected?.price;
+      const supplierName = selected?.supplierName
+
+
+      const car = { _id, quantity, title, description, image, price, supplierName };
 
       const updateCount = () => {
             const updatedCount = selected.quantity + parseInt(quantity);
-            // selected.quantity = updatedCount;
+            car._id = _id
             car.quantity = updatedCount;
+            car.title = title;
+            car.description = description;
+            car.image = image;
+            car.price = price;
+            car.supplierName = supplierName;
 
-            fetch('http://localhost:7000/allCars', {
+            fetch(`http://localhost:7000/allCars/${selected._id}`, {
                   method: "PUT",
                   headers: {
                         "content-type": "application/json"
                   },
-                  body: JSON.stringify(selected)
+                  body: JSON.stringify(car)
             })
                   .then(res => res.json())
                   .then(result => console.log(result))
@@ -58,10 +72,15 @@ const Details = _id => {
 
                   <div className="col-10 col-lg-6 mx-auto my-auto">
                         <h2 className='text-center'>Restock</h2>
-                        <div className="input-group mb-3">
-                              <input type="number" className="form-control" placeholder="Input Quantity" aria-label="Recipient's username" aria-describedby="basic-addon2" onBlur={e => setNewCount(e.target.value)} />
+                        <form className="mb-3">
+                              <input type="text" placeholder='Enter Item Title' className='my-3 form-control' disabled value={selected?.title} />
+                              <input type="text" placeholder='Enter Supplier Name' className='my-3 form-control' disabled value={selected?.supplierName} />
+                              <input type="text" placeholder='Enter Product Quantity' className='my-3 form-control' onBlur={e => setNewCount(e.target.value)} />
+                              <input type="text" placeholder='Enter Price' className='my-3 form-control' disabled value={selected?.price} />
+                              <input type="text" placeholder='Enter Image URL' className='my-3 form-control' disabled value={selected?.image} />
+                              <textarea placeholder='Description' rows="5" className='my-3 form-control' disabled value={selected?.description}></textarea>
                               <input type="button" value="Restock" className="btn btn-success" id="basic-addon2" onClick={updateCount} />
-                        </div>
+                        </form>
                   </div>
 
                   <div className="col-12 my-5">

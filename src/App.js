@@ -23,7 +23,11 @@ function App() {
         <Route path='*' element={<ErrorPage></ErrorPage>}></Route>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/my-items' element={<MyItems></MyItems>}></Route>
-        <Route path='/manage-inventories' element={<ManageInventories></ManageInventories>}></Route>
+        <Route path='/manage-inventories' element={
+          <RequireAuth>
+            <ManageInventories></ManageInventories>
+          </RequireAuth>
+        }></Route>
         <Route path='/car/:_id' element={
           <RequireAuth>
             <Details></Details>
