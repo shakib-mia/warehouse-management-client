@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import useInventories from '../../useInventories';
 import Cards from '../Home/Inventory/Cards';
@@ -64,6 +65,9 @@ const Details = () => {
 
       return (
             <Container className='mt-5 pt-5 row mx-auto'>
+                  <Helmet>
+                        <title>{selected.title} - Luxurious Car</title>
+                  </Helmet>
                   <div className='col-10 col-lg-6 mx-auto'>
                         {
                               selected ? <Cards
