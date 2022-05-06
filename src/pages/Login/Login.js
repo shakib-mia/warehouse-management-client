@@ -2,7 +2,7 @@ import { getAuth } from 'firebase/auth';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import app from '../../firebase.init';
 import SocialRegister from './SocialRegister/SocialRegister';
 import "./Login.css"
@@ -10,40 +10,26 @@ import "./Login.css"
 const auth = getAuth(app);
 
 const Login = () => {
-      const navigate = useNavigate();
-
-      const [email, setEmail] = useState([])
-      const [password, setPassword] = useState([]);
-      const [signInWithEmailAndPassword, user, error] = useSignInWithEmailAndPassword(auth);
+      const [email, setEmail] = useState("")
+      const [password, setPassword] = useState("");
+      const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
       const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
 
       let message = document.getElementById("error");
 
       const forgotPassword = () => {
-            if (email.length > 10) {
-                  message.classList.add("text-success")
-                  message.innerText = "Password Reset Link Sent";
-                  sendPasswordResetEmail(email);
-            } else {
-                  message.classList.add("text-danger")
-                  message.innerText = ""
-                  message.innerText = "Please Enter an Email Address"
-            }
+            message.innerText = "Password Reset Link Sent";
+            sendPasswordResetEmail(email);
       }
 
       const login = (event) => {
             event.preventDefault();
-            signInWithEmailAndPassword(email, password)
-      }
-      if (user && !error) {
-            message.innerText = ""
-            localStorage.setItem("email", user.user.email);
-            window.location.reload();
-            navigate(`/car/${localStorage.getItem("id") ? localStorage.getItem('id') : ""}`)
-      }
-
-      else if (error && !user) {
-            message.innerText = "Email or Password Invalid"
+            console.log(email)
+            signInWithEmailAndPassword(email, password);
+            if (email) {
+                  localStorage.setItem("email", email);
+                  window.location.reload()
+            }
       }
 
       return (
@@ -62,7 +48,7 @@ const Login = () => {
                               <input type="password" className="form-control" id="inputPassword" placeholder="Password" onBlur={e => setPassword(e.target.value)} required />
                         </div>
                         <p className='text-primary text-decoration-underline forget-pass' onClick={forgotPassword}>Forgot Password?</p>
-                        <p id='error'></p>
+                        <p className="text-danger" id='error'></p>
                         <button type="submit" id='submit' className="btn btn-primary" onClick={login}>Login</button>
 
                         <p>New to Luxurious Car? <Link to="/register">Please Register</Link></p>
