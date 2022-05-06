@@ -21,7 +21,7 @@ const Login = () => {
 
       const forgotPassword = () => {
             message.innerText = "Password Reset Link Sent";
-            sendPasswordResetEmail();
+            sendPasswordResetEmail(email);
       }
 
       const login = (event) => {
