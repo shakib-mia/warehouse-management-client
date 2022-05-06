@@ -30,7 +30,7 @@ const Details = () => {
             car.price = price;
             car.supplierName = supplierName;
 
-            fetch(`http://localhost:7000/allCars/${selected._id}`, {
+            fetch(`https://still-depths-00724.herokuapp.com/allCars/${selected._id}`, {
                   method: "PUT",
                   headers: {
                         "content-type": "application/json"
@@ -43,8 +43,23 @@ const Details = () => {
 
       const delivered = () => {
             const updatedCount = selected.quantity - 1;
+            car._id = _id
+            car.quantity = updatedCount;
+            car.title = title;
+            car.description = description;
+            car.image = image;
+            car.price = price;
+            car.supplierName = supplierName;
 
-            selected.quantity = updatedCount;
+            fetch(`https://still-depths-00724.herokuapp.com/allCars/${selected._id}`, {
+                  method: "PUT",
+                  headers: {
+                        "content-type": "application/json"
+                  },
+                  body: JSON.stringify(car)
+            })
+                  .then(res => res.json())
+                  .then(result => console.log(result))
       }
 
       return (
