@@ -66,7 +66,7 @@ const Details = () => {
       return (
             <Container className='mt-5 pt-5 row mx-auto'>
                   <Helmet>
-                        <title>{selected ? selected.title : "Loading..."} - Luxurious Car</title>
+                        <title>{selected ? selected.title + "- Luxurious Car" : "Loading..."}</title>
                   </Helmet>
                   <div className='col-10 col-lg-6 mx-auto'>
                         {
