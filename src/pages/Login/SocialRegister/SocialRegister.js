@@ -1,9 +1,11 @@
 import { getAuth, GithubAuthProvider, GoogleAuthProvider, signInWithPopup, } from 'firebase/auth';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import app from '../../../firebase.init';
 
 const SocialRegister = () => {
       const auth = getAuth(app);
+      const navigate = useNavigate();
 
       const HandleGoogleSignIn = (event) => {
             event.preventDefault();
@@ -11,8 +13,11 @@ const SocialRegister = () => {
 
             signInWithPopup(auth, provider)
                   .then(result => {
-                        console.log(result.user)
-                        localStorage.setItem("name", result.user.displayName)
+                        localStorage.setItem("name", result.user.displayName);
+                        localStorage.setItem("email", result.user.email);
+
+                        navigate(`/car/${localStorage.getItem("id")}`);
+                        window.location.reload()
                   })
       }
 
@@ -23,7 +28,11 @@ const SocialRegister = () => {
 
             signInWithPopup(auth, provider)
                   .then(result => {
-                        console.log(result.user)
+                        localStorage.setItem("name", result.user.displayName);
+                        localStorage.setItem("email", result.user.email);
+
+                        navigate(`/car/${localStorage.getItem("id")}`);
+                        window.location.reload()
                   })
       }
 
