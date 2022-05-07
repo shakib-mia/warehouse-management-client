@@ -14,7 +14,7 @@ const MyItems = () => {
       const deleteBtn = (id) => {
             const result = window.confirm("Are You Sure You want to delete this item?");
             if (result) {
-                  console.log("Data Deleted");
+                  document.getElementById(id).style.display = "none"
                   if (items.filter(element => console.log(element._id === id))) {
                         fetch(`https://still-depths-00724.herokuapp.com/userItems/${id}`, {
                               method: "DELETE"
@@ -35,6 +35,7 @@ const MyItems = () => {
                               items.length > 0 ? items.map(car =>
                                     <Cards key={car._id}
                                           id={car._id}
+                                          uId={car._id}
                                           image={car.image}
                                           name={car.title}
                                           description={car.description}

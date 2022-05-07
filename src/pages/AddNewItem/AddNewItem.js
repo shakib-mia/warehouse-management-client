@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet-async';
 
 
 const putInSingle = item => {
-      alert('from single')
       fetch('https://still-depths-00724.herokuapp.com/userItems', {
             method: "POST",
             headers: {
@@ -18,7 +17,6 @@ const putInSingle = item => {
 }
 
 const putInAll = item => {
-      alert('from all')
       fetch('https://still-depths-00724.herokuapp.com/allCars', {
             method: "PUT",
             headers: {
