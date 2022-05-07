@@ -9,6 +9,7 @@ const Details = () => {
       const [data] = useInventories();
       const selected = data.find(car => car._id === window.location.href.substring(26));
       const [quantity, setNewCount] = useState(0);
+      console.log(selected)
 
       const _id = selected?._id;
       const title = selected?.title;
@@ -78,7 +79,6 @@ const Details = () => {
                         <title>{selected ? selected.title : "Loading..."} - Luxurious Car</title>
                   </Helmet>
                   <div className='col-10 col-lg-6 mx-auto'>
-                        {console.log(selected)}
                         {
                               selected ? <Cards
                                     key={selected._id}
