@@ -43,15 +43,21 @@ const Details = () => {
 
       const delivered = () => {
             const quantity = parseFloat(document.getElementById('quantity').innerText)
-            document.getElementById('quantity').innerText = quantity - 1;
-            const updatedCount = selected.quantity - 1;
-            car._id = _id
-            car.quantity = updatedCount;
-            car.title = title;
-            car.description = description;
-            car.image = image;
-            car.price = price;
-            car.supplierName = supplierName;
+            if (quantity > 0) {
+                  document.getElementById('quantity').innerText = quantity - 1;
+                  const updatedCount = quantity - 1;
+                  car._id = _id
+                  car.quantity = updatedCount;
+                  car.title = title;
+                  car.description = description;
+                  car.image = image;
+                  car.price = price;
+                  car.supplierName = supplierName;
+            }
+
+            else {
+                  alert(title + " is out of stock")
+            }
 
             fetch(`https://still-depths-00724.herokuapp.com/allCars/${selected._id}`, {
                   method: "PUT",
