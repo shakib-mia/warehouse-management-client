@@ -30,7 +30,16 @@ const Header = () => {
                                                       <NavLink to="/add-new-item" className='text-decoration-none text-dark px-3 py-2 ms-2 d-block d-lg-inline-block'>Add Items</NavLink>
                                                       <NavLink to="/manage-inventories" className='text-decoration-none text-dark px-3 py-2 ms-2 d-block d-lg-inline-block'>Manage Items</NavLink>
                                                       <NavLink to="/my-items" className='text-decoration-none text-dark px-3 py-2 ms-2 d-block d-lg-inline-block'>My Items</NavLink>
-                                                      <NavLink to="/" className='text-decoration-none text-dark px-3 py-2 ms-2 d-block d-lg-inline-block'>{localStorage.getItem("email") ? localStorage.getItem("email") : localStorage.getItem("name")} <button onClick={logout}>Logout</button></NavLink>
+                                                      <NavLink to="/" className='text-decoration-none text-dark px-3 py-2 ms-2 d-block d-lg-inline-block'>{
+                                                            localStorage.getItem('email') && localStorage.getItem("name")
+                                                                  ?
+                                                                  localStorage.getItem('name')
+                                                                  :
+                                                                  localStorage.getItem('email')
+
+                                                      }
+                                                            <button onClick={logout}>Logout</button>
+                                                      </NavLink>
                                                 </span>
                                                 :
                                                 <NavLink to="/login" className='text-decoration-none text-dark px-3 py-2 ms-2'>Login</NavLink>

@@ -28,8 +28,8 @@ const Login = () => {
             signInWithEmailAndPassword(email, password);
             if (email) {
                   localStorage.setItem("email", email);
-                  navigate(sessionStorage.getItem("id") ? `/car/${sessionStorage.getItem('id')}` : "/");
-                  sessionStorage.removeItem("id");
+                  navigate(localStorage.getItem("id") ? `/car/${localStorage.getItem('id')}` : "/");
+                  localStorage.removeItem("id");
                   window.location.reload()
             }
       }
