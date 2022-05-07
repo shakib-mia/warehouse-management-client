@@ -2,9 +2,9 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const Cards = ({ size, name, image, description, price, quantity, supplierName, buttonName, btnColor, btnLink, savePath }) => {
+const Cards = ({ uId, size, name, image, description, price, quantity, supplierName, buttonName, btnColor, btnLink, savePath }) => {
       return (
-            <div className={size}>
+            <div className={size} id={uId}>
                   <Card className='h-100 shadow'>
                         <Card.Img variant="top" src={image} height="300px" />
                         <Card.Body>

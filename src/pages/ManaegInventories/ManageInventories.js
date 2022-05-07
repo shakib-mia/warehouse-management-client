@@ -33,6 +33,7 @@ const ManageInventories = () => {
                         {data.length > 0 ?
 
                               data.map(car => <Cards key={car._id}
+                                    uId={'card'}
                                     id={car._id}
                                     image={car.image}
                                     name={car.title}
