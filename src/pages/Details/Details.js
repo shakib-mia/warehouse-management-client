@@ -23,7 +23,6 @@ const Details = () => {
       const updateCount = () => {
             const updatedCount = selected.quantity + parseInt(quantity);
             document.getElementById('quantity').innerText = updatedCount;
-
             car._id = _id
             car.quantity = updatedCount;
             car.title = title;
@@ -31,6 +30,7 @@ const Details = () => {
             car.image = image;
             car.price = price;
             car.supplierName = supplierName;
+            document.getElementById('count').value = ""
 
             fetch(`https://still-depths-00724.herokuapp.com/allCars/${selected._id}`, {
                   method: "PUT",
@@ -103,7 +103,7 @@ const Details = () => {
                         <form className="mb-3">
                               <input type="text" placeholder='Enter Item Title' className='my-3 form-control' disabled value={selected?.title} />
                               <input type="text" placeholder='Enter Supplier Name' className='my-3 form-control' disabled value={selected?.supplierName} />
-                              <input type="text" placeholder='Enter Product Quantity' className='my-3 form-control' onBlur={e => setNewCount(e.target.value)} />
+                              <input type="text" placeholder='Enter Product Quantity' className='my-3 form-control' id='count' onBlur={e => setNewCount(e.target.value)} />
                               <input type="text" placeholder='Enter Price' className='my-3 form-control' disabled value={selected?.price} />
                               <input type="text" placeholder='Enter Image URL' className='my-3 form-control' disabled value={selected?.image} />
                               <textarea placeholder='Description' rows="5" className='my-3 form-control' disabled value={selected?.description}></textarea>

@@ -22,7 +22,7 @@ const Register = () => {
 
       const register = (event) => {
             event.preventDefault();
-            sendEmailVerification();
+            sendEmailVerification(email);
             createUserWithEmailAndPassword(email, password, firstName, lastName)
                   .then(result => {
                         console.log(result)
