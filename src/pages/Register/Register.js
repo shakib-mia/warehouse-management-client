@@ -32,7 +32,9 @@ const Register = () => {
             if (user) {
                   console.log(user);
                   localStorage.setItem("name", displayName);
-                  navigate(`/${localStorage.getItem("id") ? localStorage.getItem('id') : ""}`)
+                  navigate(`/car/${localStorage.getItem('id') ? localStorage.getItem('id') : ""}`)
+                  sessionStorage.removeItem("id");
+                  window.location.reload()
             }
       }
 

@@ -2,7 +2,7 @@ import { getAuth } from 'firebase/auth';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import app from '../../firebase.init';
 import SocialRegister from './SocialRegister/SocialRegister';
 import "./Login.css"
@@ -10,6 +10,7 @@ import "./Login.css"
 const auth = getAuth(app);
 
 const Login = () => {
+      const navigate = useNavigate();
       const [email, setEmail] = useState("")
       const [password, setPassword] = useState("");
       const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
@@ -24,10 +25,11 @@ const Login = () => {
 
       const login = (event) => {
             event.preventDefault();
-            console.log(email)
             signInWithEmailAndPassword(email, password);
             if (email) {
                   localStorage.setItem("email", email);
+                  navigate(sessionStorage.getItem("id") ? `/car/${sessionStorage.getItem('id')}` : "/");
+                  sessionStorage.removeItem("id");
                   window.location.reload()
             }
       }
