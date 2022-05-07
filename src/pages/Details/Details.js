@@ -78,6 +78,7 @@ const Details = () => {
                         <title>{selected ? selected.title : "Loading..."} - Luxurious Car</title>
                   </Helmet>
                   <div className='col-10 col-lg-6 mx-auto'>
+                        {console.log(selected)}
                         {
                               selected ? <Cards
                                     key={selected._id}
