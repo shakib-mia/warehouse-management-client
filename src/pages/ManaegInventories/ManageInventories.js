@@ -8,6 +8,18 @@ import Cards from '../Home/Inventory/Cards';
 const ManageInventories = () => {
       const [data] = useInventories();
 
+      const deleteBtn = (id) => {
+            const result = window.confirm("Are You Sure You want to delete this item?");
+            if (result) {
+                  console.log("Data Deleted")
+                  fetch(`https://still-depths-00724.herokuapp.com/allCars/${id}`, {
+                        method: "DELETE"
+                  })
+                        .then(res => res.json())
+                        .then(Data => console.log(Data))
+            }
+      }
+
       return (
             <Container className='py-5'>
                   <Helmet>
@@ -29,7 +41,7 @@ const ManageInventories = () => {
                                     supplierName={car.supplierName}
                                     buttonName="Delete"
                                     btnColor="btn-danger"
-                                    btnLink={"/"}
+                                    savePath={() => deleteBtn(car._id)}
                                     size='col-12 col-md-6 col-lg-4 my-2'
                               ></Cards>
                               )

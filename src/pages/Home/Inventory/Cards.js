@@ -17,7 +17,7 @@ const Cards = ({ size, name, image, description, price, quantity, supplierName, 
                               </div>
                         </Card.Body>
                         <Card.Footer className="bg-transparent border-0">
-                              <Link to={`/car/${btnLink}`} onClick={savePath} className={`btn ${btnColor}`}>{buttonName}</Link>
+                              <Link to={btnLink ? `/car/${btnLink}` : ""} onClick={savePath} className={`btn ${btnColor}`}>{buttonName}</Link>
                         </Card.Footer>
                   </Card>
             </div>
