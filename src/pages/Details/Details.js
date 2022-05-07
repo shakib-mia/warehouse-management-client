@@ -7,7 +7,7 @@ import Cards from '../Home/Inventory/Cards';
 
 const Details = () => {
       const [data] = useInventories();
-      const selected = data.find(car => car._id === window.location.href.substring(26));
+      const selected = data.find(car => car._id === localStorage.getItem('id'));
       const [quantity, setNewCount] = useState(0);
       console.log(selected)
 
