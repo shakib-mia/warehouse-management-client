@@ -8,7 +8,6 @@ import Cards from '../Home/Inventory/Cards';
 const Details = () => {
       const [data] = useInventories();
       const selected = data.find(car => car._id === window.location.href.substring(26));
-
       const [quantity, setNewCount] = useState(0);
 
       const _id = selected?._id;
@@ -68,7 +67,7 @@ const Details = () => {
       return (
             <Container className='mt-5 pt-5 row mx-auto'>
                   <Helmet>
-                        {/* <title>{selected.title ? selected.title : "Loading..."} - Luxurious Car</title> */}
+                        <title>{selected ? selected.title : "Loading..."} - Luxurious Car</title>
                   </Helmet>
                   <div className='col-10 col-lg-6 mx-auto'>
                         {
