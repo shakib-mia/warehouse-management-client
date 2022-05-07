@@ -65,11 +65,6 @@ const Details = () => {
                   .then(result => console.log(result))
       }
 
-      // const delivered = () => {
-      //       const quantity = parseFloat(document.getElementById('quantity').innerText)
-      //       document.getElementById('quantity').innerText = quantity - 1
-      // }
-
       return (
             <Container className='mt-5 pt-5 row mx-auto'>
                   <Helmet>
