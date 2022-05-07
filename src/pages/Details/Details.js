@@ -39,13 +39,12 @@ const Details = () => {
                   body: JSON.stringify(car)
             })
                   .then(res => res.json())
-                  .then(result => {
-                        console.log(result);
-                        window.location.reload()
-                  })
+                  .then(result => console.log(result))
       }
 
       const delivered = () => {
+            const quantity = parseFloat(document.getElementById('quantity').innerText)
+            document.getElementById('quantity').innerText = quantity - 1;
             const updatedCount = selected.quantity - 1;
             car._id = _id
             car.quantity = updatedCount;
@@ -63,16 +62,18 @@ const Details = () => {
                   body: JSON.stringify(car)
             })
                   .then(res => res.json())
-                  .then(result => {
-                        console.log(result)
-                        window.location.reload();
-                  })
+                  .then(result => console.log(result))
       }
+
+      // const delivered = () => {
+      //       const quantity = parseFloat(document.getElementById('quantity').innerText)
+      //       document.getElementById('quantity').innerText = quantity - 1
+      // }
 
       return (
             <Container className='mt-5 pt-5 row mx-auto'>
                   <Helmet>
-                        <title>{selected ? selected.title + "- Luxurious Car" : "Loading..."}</title>
+                        {/* <title>{selected.title ? selected.title : "Loading..."} - Luxurious Car</title> */}
                   </Helmet>
                   <div className='col-10 col-lg-6 mx-auto'>
                         {

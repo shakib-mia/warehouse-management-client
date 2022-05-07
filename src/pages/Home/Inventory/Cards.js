@@ -12,7 +12,7 @@ const Cards = ({ size, name, image, description, price, quantity, supplierName, 
                               <div className='card-text'>
                                     <p>{description}</p>
                                     <p><b>Price: </b>${price}</p>
-                                    <p><b>Quantity: </b>{quantity}</p>
+                                    <p><b>Quantity: </b><span id='quantity'>{quantity}</span></p>
                                     <p><b>Supplier:</b>{supplierName}</p>
                               </div>
                         </Card.Body>
