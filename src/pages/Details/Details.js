@@ -22,6 +22,8 @@ const Details = () => {
 
       const updateCount = () => {
             const updatedCount = selected.quantity + parseInt(quantity);
+            document.getElementById('quantity').innerText = updatedCount;
+
             car._id = _id
             car.quantity = updatedCount;
             car.title = title;

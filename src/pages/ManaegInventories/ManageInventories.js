@@ -11,7 +11,8 @@ const ManageInventories = () => {
       const deleteBtn = (id) => {
             const result = window.confirm("Are You Sure You want to delete this item?");
             if (result) {
-                  console.log("Data Deleted")
+                  console.log("Data Deleted");
+                  data.filter(element => console.log(element._id === id))
                   fetch(`https://still-depths-00724.herokuapp.com/allCars/${id}`, {
                         method: "DELETE"
                   })
