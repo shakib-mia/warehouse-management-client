@@ -11,16 +11,36 @@ const MyItems = () => {
                   .then(data => setItem(data))
       }, [])
 
+
+      const deleteFromSingle = id => {
+            console.log(id)
+            fetch(`https://still-depths-00724.herokuapp.com/userItems/${id}`, {
+                  method: "DELETE",
+            })
+                  .then(res => res.json())
+                  .then(result => {
+                        console.log(result);
+                  })
+      }
+
+      const deleteFromAll = id => {
+            fetch(`https://still-depths-00724.herokuapp.com/allCars/${id}`, {
+                  method: "DELETE",
+            })
+                  .then(res => res.json())
+                  .then(result => {
+                        console.log(result);
+                  })
+      }
+
       const deleteBtn = (id) => {
             const result = window.confirm("Are You Sure You want to delete this item?");
+            console.log(id)
             if (result) {
-                  document.getElementById(id).style.display = "none"
+                  document.getElementById(id).style.display = "none";
                   if (items.filter(element => console.log(element._id === id))) {
-                        fetch(`https://still-depths-00724.herokuapp.com/userItems/${id}`, {
-                              method: "DELETE"
-                        })
-                              .then(res => res.json())
-                              .then(Data => console.log(Data))
+                        deleteFromSingle(id);
+                        deleteFromAll(id)
                   }
             }
       }

@@ -16,6 +16,7 @@ const Inventory = () => {
                               homeData.length > 0 ? homeData.map(car =>
                                     <Cards key={car._id}
                                           id={car._id}
+                                          uId={car._id}
                                           image={car.image}
                                           name={car.title}
                                           description={car.description}
