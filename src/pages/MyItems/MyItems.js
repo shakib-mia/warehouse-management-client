@@ -15,9 +15,8 @@ const MyItems = () => {
             const result = window.confirm("Are You Sure You want to delete this item?");
             if (result) {
                   console.log("Data Deleted");
-                  console.log(document.getElementById('card').innerHTML)
                   if (items.filter(element => console.log(element._id === id))) {
-                        fetch(`https://still-depths-00724.herokuapp.com/userItems`, {
+                        fetch(`https://still-depths-00724.herokuapp.com/userItems/${id}`, {
                               method: "DELETE"
                         })
                               .then(res => res.json())
