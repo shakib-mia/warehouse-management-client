@@ -1,0 +1,92 @@
+[
+      {
+            "productId": "LUXURIOUSCAR1",
+            "title": "Ford Raptor",
+            "quantity": 0,
+            "price": 10000,
+            "supplierName": "Ford",
+            "description": "The 2020 Ford Raptor features a twin-turbocharged high-output 3.5L EcoBoost V6 engine that dishes out 450 horsepower and 510 lb-ft of torque. This Ford Raptor engine pairs to a paddle-shifted 10-speed automatic transmission to offer a smooth performance both on and off-road.",
+            "image": "https://i.ibb.co/y4PWTmh/2019-Ford-F-150-Raptor-front-side-in-motion.webp"
+      },
+      {
+            "productId": "LUXURIOUSCAR2",
+            "title": "Lamborghini Diablo SV",
+            "quantity": 7,
+            "price": 10000,
+            "supplierName": "Lamborghini",
+            "description": "The Lamborghini Diablo is a high-performance mid-engine sports car built by Italian automotive manufacturer Lamborghini between 1990 and 2001. It is the first production Lamborghini capable of attaining a top speed in excess of 320 kilometres per hour (200 mph).",
+            "image": "https://i.ibb.co/c1yZG8b/1999-Lamborghini-Diablo-SV.jpg"
+      },
+      {
+            "productId": "LUXURIOUSCAR3",
+            "title": "Porche 911 Carrera",
+            "quantity": 100,
+            "price": 10000,
+            "supplierName": "Porsche",
+            "description": "The base Carrera has 379 horsepower, the S pumps out 443 ponies, and the GTS generates 473 horses. While every model comes standard with a ridiculously quick-shifting eight-speed automatic transmission, a sweet seven-speed manual is offered on the S and GTS.",
+            "image": "https://i.ibb.co/TrPJyZX/2020-Porsche-911-Carrera-4-S-20.webp"
+      },
+      {
+            "productId": "LUXURIOUSCAR4",
+            "title": "Ferrari Testarossa",
+            "quantity": 0,
+            "price": 10000,
+            "supplierName": "Ferrari",
+            "description": "The Testarossa is one of Ferrari's most iconic models, and back in the late '80s and early '90s, it was on every young car fan's favorite poster. It became a Hollywood star thanks to the Miami Vice TV series, and every celebrity either owned or wanted one.",
+            "image": "https://i.ibb.co/NjfhjJH/Ferrari-Testarossa.webp"
+      },
+      {
+            "productId": "LUXURIOUSCAR5",
+            "title": "Jensen Interceptor",
+            "quantity": 0,
+            "price": 10000,
+            "supplierName": "Jensen",
+            "description": "The Jensen Interceptor is a grand touring car which was hand-built at the Kelvin Way Factory in West Bromwich, near Birmingham in England, by Jensen Motors between 1966 and 1976. The Interceptor name had been used previously by Jensen for the Jensen Interceptor made between 1950 and 1957 at the Carters Green factory.",
+            "image": "https://i.ibb.co/BLmTnhs/1973-Jensen-Intercepter-III.webp"
+      },
+      {
+            "productId": "LUXURIOUSCAR6",
+            "title": "Lamborghini Huracan",
+            "quantity": 0,
+            "price": 10000,
+            "supplierName": "Lamborghini",
+            "description": "The Lamborghini Huracan has 1 Petrol Engine on offer. The Petrol engine is 5204 cc . It is available with Automatic transmission.Depending upon the variant and fuel type the Huracan has a mileage of 10.6 to 11.24 kmpl & Ground clearance of Huracan is 125mm. The Huracan is a 2 seater 10 cylinder car and has length of 4459mm, width of 1924mm and a wheelbase of 2620mm.",
+            "image": "https://i.ibb.co/xHhTwy3/2019-Lamborghini-Huracan-GT3-EVO-24.webp"
+      },
+      {
+            "productId": "LUXURIOUSCAR7",
+            "title": "Land Rover",
+            "quantity": 0,
+            "price": 10000,
+            "supplierName": "Ferrari",
+            "description": "Land Rover is a British brand of predominantly four-wheel drive, off-road capable vehicles, owned by multinational car manufacturer Jaguar Land Rover (JLR), since 2008 a subsidiary of India's Tata Motors. JLR currently builds Land Rovers in Brazil, China, India, Slovakia, and the United Kingdom.",
+            "image": "https://i.ibb.co/BtJH0sz/2018-Ferrari-812-Superfast-front-three-quarter-in-motion-2.webp"
+      },
+      {
+            "productId": "LUXURIOUSCAR8",
+            "title": "Jeep Gladiator",
+            "quantity": 0,
+            "price": 10000,
+            "supplierName": "Jeep",
+            "description": "The 2022 Jeep Gladiator is a pretty good compact pickup truck . The Gladiator is exceptionally capable off road, much like its Jeep Wrangler sibling, and it offers muscular gas and diesel V6 engines, a 5-foot bed, and hefty payload and tow ratings.",
+            "image": "https://i.ibb.co/z2HJWM6/2020-Jeep-Gladiator-025.jpg"
+      },
+      {
+            "productId": "LUXURIOUSCAR9",
+            "title": "Rolls Royce",
+            "quantity": 0,
+            "price": 10000,
+            "supplierName": "Rolls Royce",
+            "description": "Rolls-Royce is the world's leading supplier of marine propulsion equipment. Its products and services range from complete ship design to integrated propulsion, maneuvering, and positioning systems and deck machinery.",
+            "image": "https://i.ibb.co/ykKTDYH/Rolls-Royce-Wraith-Eagle-VIII-11.webp"
+      },
+      {
+            "productId": "LUXURIOUSCAR10",
+            "title": "Maruti Suzuki",
+            "quantity": 0,
+            "price": 10000,
+            "supplierName": "Maruti Suzuki",
+            "description": "The Samurai was the first four-wheeled vehicle Suzuki sold in the U.S., but its history begins nearly 20 years before the plucky little 4x4 made its way across the Pacific. In 1968, Japan's Hope Motor Company introduced a small kei-class 4x4 with a 359cc Mitsubishi engine called the ON360.",
+            "image": "https://i.ibb.co/NmPHTDt/Suzuki-Samurai-LWB-convertible1.webp"
+      }
+]

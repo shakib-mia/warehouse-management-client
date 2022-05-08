@@ -1,34 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-
-
-const putInSingle = item => {
-      fetch('https://still-depths-00724.herokuapp.com/userItems', {
-            method: "POST",
-            headers: {
-                  'content-type': "application/json"
-            },
-            body: JSON.stringify(item)
-      })
-            .then(res => res.json())
-            .then(result => {
-                  console.log(result);
-            })
-}
-
-const putInAll = item => {
-      fetch('https://still-depths-00724.herokuapp.com/allCars', {
-            method: "PUT",
-            headers: {
-                  'content-type': "application/json"
-            },
-            body: JSON.stringify(item)
-      })
-            .then(res => res.json())
-            .then(result => {
-                  console.log(result);
-            })
-}
 
 const AddNewItem = () => {
       const [title, setTitle] = useState('');
@@ -49,9 +20,17 @@ const AddNewItem = () => {
             car.quantity = quantity;
             car.supplierName = supplierName;
             car.description = description
-
-            putInSingle(car);
-            putInAll(car);
+            fetch('https://still-depths-00724.herokuapp.com/allCars', {
+                  method: "PUT",
+                  headers: {
+                        'content-type': "application/json"
+                  },
+                  body: JSON.stringify(car)
+            })
+                  .then(res => res.json())
+                  .then(result => {
+                        console.log(result);
+                  })
       }
 
       return (

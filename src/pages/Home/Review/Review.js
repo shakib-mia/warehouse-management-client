@@ -6,7 +6,7 @@ const Review = () => {
       const nextComments = comments.slice(1, comments.length)
 
       useEffect(() => {
-            fetch('https://still-depths-00724.herokuapp.com/comments')
+            fetch('http://localhost:5000/comments')
                   .then(res => res.json())
                   .then(data => setComments(data))
       }, [])

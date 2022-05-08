@@ -16,7 +16,7 @@ const Feedback = () => {
             comments.image = image;
             comments.review = review;
 
-            fetch(`https://still-depths-00724.herokuapp.com/comments`, {
+            fetch(`http://localhost:5000/comments`, {
                   method: "POST",
                   headers: {
                         'content-type': "application/json"

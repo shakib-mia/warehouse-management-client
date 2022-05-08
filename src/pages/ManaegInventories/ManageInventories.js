@@ -6,18 +6,22 @@ import useInventories from '../../useInventories';
 import Cards from '../Home/Inventory/Cards';
 
 const ManageInventories = () => {
-      const [data] = useInventories();
+      const [data, setData] = useInventories();
 
       const deleteBtn = (id) => {
             const result = window.confirm("Are You Sure You want to delete this item?");
             if (result) {
-                  document.getElementById(id).style.display = "none"
-                  data.filter(element => console.log(element._id === id))
+                  // document.getElementById(id).style.display = "none";
                   fetch(`https://still-depths-00724.herokuapp.com/allCars/${id}`, {
                         method: "DELETE"
                   })
                         .then(res => res.json())
-                        .then(Data => console.log(Data))
+                        .then(Data => {
+                              document.getElementsByClassName('row').style.display = "none"
+                              const remaining = data.filter(item => item._id !== id);
+                              setData(remaining)
+                        })
+
             }
       }
 
