@@ -78,7 +78,7 @@ const Details = () => {
                   <Helmet>
                         <title>{selected ? selected.title : "Loading..."} - Luxurious Car</title>
                   </Helmet>
-                  <div className='col-10 col-lg-6 mx-auto'>
+                  <div className='col-12 col-lg-6 mx-auto'>
                         {
                               selected ? <Cards
                                     key={selected._id}
@@ -92,7 +92,7 @@ const Details = () => {
                                     btnLink={`${selected?._id}`}
                                     savePath={() => delivered(selected._id)}
                                     btnColor="btn-success"
-                                    size="col-10 mx-auto"
+                                    size="col-12 col-md-9 mx-auto"
                               ></Cards> : <div className="spinner-border text-center text-primary" role="status">
                                     <span className="visually-hidden">Loading...</span>
                               </div>
